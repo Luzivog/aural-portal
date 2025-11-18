@@ -1,8 +1,8 @@
-import type { NextPage } from "next"
+import type { NextPageWithAuth } from "@/types/page-with-auth"
 
 import { LoginForm } from "@/components/login-form"
 
-const LoginPage: NextPage = () => {
+const LoginPage: NextPageWithAuth = () => {
   return (
     <div className="bg-muted flex min-h-svh flex-col items-center justify-center p-6 md:p-10">
       <div className="w-full max-w-sm md:max-w-4xl">
@@ -11,5 +11,7 @@ const LoginPage: NextPage = () => {
     </div>
   )
 }
+
+LoginPage.auth = "unprotected"
 
 export default LoginPage

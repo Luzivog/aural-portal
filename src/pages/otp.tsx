@@ -1,15 +1,26 @@
-import type { NextPage } from "next"
+import { useRouter } from "next/router";
 
-import { OTPForm } from "@/components/otp-form"
+import type { NextPageWithAuth } from "@/types/page-with-auth";
 
-const OTPPage: NextPage = () => {
+import { OTPForm } from "@/components/otp-form";
+
+const OTPPage: NextPageWithAuth = () => {
+  const router = useRouter();
+  const emailParam = router.query.email;
+  const intentParam = router.query.intent;
+
+  const email = typeof emailParam === "string" ? emailParam : undefined;
+  const intent = intentParam === "verify-email" ? "verify-email" : undefined;
+
   return (
     <div className="bg-muted flex min-h-svh flex-col items-center justify-center p-6 md:p-10">
       <div className="w-full max-w-md">
-        <OTPForm />
+        <OTPForm email={email} intent={intent} />
       </div>
     </div>
-  )
-}
+  );
+};
+
+OTPPage.auth = "unprotected"
 
 export default OTPPage

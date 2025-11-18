@@ -69,13 +69,6 @@ export function Header(): React.JSX.Element {
           ))}
         </nav>
         <div className="hidden items-center gap-3 md:flex">
-          <Button
-            asChild
-            variant="outline"
-            className="rounded-full border-white/30 bg-white/20 text-slate-900 shadow-none backdrop-blur-sm hover:bg-white/30 dark:border-slate-700/60 dark:bg-slate-900/40 dark:text-slate-100"
-          >
-            <Link href="/admin">Admin</Link>
-          </Button>
           <Button asChild className="rounded-full shadow-lg shadow-blue-600/10">
             <Link href="/login">Request Access</Link>
           </Button>
@@ -95,14 +88,6 @@ export function Header(): React.JSX.Element {
           ))}
           <Button asChild size="sm" className="rounded-full shadow-md shadow-blue-600/10">
             <Link href="/login">Request Access</Link>
-          </Button>
-          <Button
-            asChild
-            size="sm"
-            variant="outline"
-            className="rounded-full border-white/30 bg-white/20 text-slate-900 shadow-none backdrop-blur-sm hover:bg-white/30 dark:border-slate-700/60 dark:bg-slate-900/40 dark:text-slate-100"
-          >
-            <Link href="/admin">Admin</Link>
           </Button>
         </div>
       </nav>

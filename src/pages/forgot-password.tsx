@@ -1,9 +1,11 @@
-import type { NextPage } from "next"
+import type { NextPageWithAuth } from "@/types/page-with-auth"
 
 import ForgotPasswordForm from "@/components/forgot-password"
 
-const ForgotPasswordPage: NextPage = () => {
+const ForgotPasswordPage: NextPageWithAuth = () => {
   return <ForgotPasswordForm />
 }
+
+ForgotPasswordPage.auth = "unprotected"
 
 export default ForgotPasswordPage

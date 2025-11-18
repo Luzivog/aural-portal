@@ -7,8 +7,9 @@ import { Hero } from "@/components/sections/hero";
 import { HowItWorksSection } from "@/components/sections/how-it-works";
 import { FeaturesSection } from "@/components/sections/features";
 import { FaqSection } from "@/components/sections/faq";
+import type { NextPageWithAuth } from "@/types/page-with-auth";
 
-export default function Home(): React.JSX.Element {
+const Home: NextPageWithAuth = () => {
   return (
     <>
       <Head>
@@ -31,4 +32,8 @@ export default function Home(): React.JSX.Element {
       </div>
     </>
   );
-}
+};
+
+Home.auth = "neutral";
+
+export default Home;
